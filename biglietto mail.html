@@ -1,0 +1,133 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE>
+<head>
+ <meta charset="ISO-8859-1"> 
+ <style type="text/css">
+   .card-biglietto {
+    background: linear-gradient(to bottom, var(--primary-dark) 0%, var(--primary-main) 26%, var(--background-paper) 26%, var(--background-paper) 100%);
+    float: left;
+    height: 235px;
+    position: relative;
+    padding: 1em;
+}
+.cardLeft {
+    height: 235px;
+    width: 300px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.cardRight {
+    border-left: 0.18em dashed var(--background-default);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.cardRight:before, .cardRight:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0.9em;
+    height: 0.9em;
+    background:var(--background-default);
+    border-radius: 50%;
+    left: -0.5em;
+}
+.cardRight:before {
+    top: -0.4em;
+}
+.cardRight:after {
+    bottom: -0.4em;
+}
+h1 {
+    font-size: 22px;
+    margin-top: 0;
+}
+h1 span {
+    font-weight: normal;
+}
+.title, .name, .seat, .time {
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.title h2, .name h2, .seat h2, .time h2 {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin: 0;
+}
+.title span, .name span, .seat span, .time span {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+.title {
+    margin: 2em 0 0 0;
+}
+.name, .seat {
+    margin: 0.7em 0 0 0;
+}
+.time {
+    margin: 0.7em 0 0 1em;
+}
+.seat, .time {
+    float: left;
+}
+.eye{
+    display: grid;
+    justify-items: center;
+}
+.eye .logo__image{
+    position: relative;
+    width: 50px;
+    z-index: 1;
+}
+
+.number {
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+}
+.number h3 {
+    color: var(--secondary-main);
+    margin: 0.9em 0 0 0;
+    font-size: 36px;
+}
+.number span {
+    display: block;
+    color: var(--text-secondary);
+}  
+
+ </style>  
+</head>
+<body>   
+<div class="cardContainer">
+            <div class="card-biglietto cardLeft">
+            <h1>Premiere Cinema <span>Cult</span></h1>
+            <div class="title">
+                <h2><%=p.getSpettacolo().getFilm().getTitolo()%></h2>
+                <span>Titolo</span>
+            </div>
+            <div class="name">
+                <h2><%=p.getSpettacolo().getSala().getNome() %></h2>
+                <span>sala</span>
+            </div>
+            <div class="seat">
+                <h2><%=p.getSpettacolo().getData()%></h2>
+                <span>Data</span>
+            </div>
+            <div class="time">
+                <h2><%=p.getSpettacolo().getOra()%></h2>
+                <span>Ora</span>
+            </div>
+            
+            </div>
+            <div class="card-biglietto cardRight">
+            <div class="eye">
+                <img src="reg/FaviconGruppo4.png" alt="Logo" class="logo__image">
+            </div>
+            <div class="number">
+                <h3><%=p.getId() %></h3>
+                <span>Codice Prenotazione</span>
+            </div>
+
+            </div>
+        </div>
+        </body>
